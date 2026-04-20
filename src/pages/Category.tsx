@@ -287,20 +287,20 @@ const Stars = ({ n }: { n: number }) => (
 
 const ProductCard = ({ p }: { p: Product }) => (
   <article className="group relative rounded-2xl border border-border bg-card overflow-hidden shadow-card hover:shadow-elev transition-all">
-    <div className="relative aspect-[4/3] overflow-hidden bg-surface">
+    <Link to={`/produs/${p.id}`} className="block relative aspect-[4/3] overflow-hidden bg-surface">
       <img src={p.img} alt={p.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
       <div className="absolute top-3 left-3 flex flex-col gap-1.5">
         {p.isHot && <Badge className="bg-destructive text-destructive-foreground hover:bg-destructive">Ofertă</Badge>}
         {p.isNew && <Badge className="bg-eco text-eco-foreground hover:bg-eco">Nou</Badge>}
         {p.stock === "Stoc epuizat" && <Badge variant="outline" className="bg-background/80">Stoc epuizat</Badge>}
       </div>
-      <button className="absolute top-3 right-3 h-9 w-9 rounded-full bg-background/90 backdrop-blur flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors" aria-label="Wishlist">
+      <button onClick={(e) => e.preventDefault()} className="absolute top-3 right-3 h-9 w-9 rounded-full bg-background/90 backdrop-blur flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors" aria-label="Wishlist">
         <Heart className="h-4 w-4" />
       </button>
-    </div>
+    </Link>
     <div className="p-5">
       <div className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold">{p.brand}</div>
-      <h3 className="mt-1 font-semibold text-foreground line-clamp-2 min-h-[3rem]">{p.name}</h3>
+      <Link to={`/produs/${p.id}`} className="mt-1 block font-semibold text-foreground line-clamp-2 min-h-[3rem] hover:text-accent transition-colors">{p.name}</Link>
       <div className="mt-2 flex items-center gap-2"><Stars n={p.rating} /><span className="text-xs text-muted-foreground">({p.rating}.0)</span></div>
       <div className="mt-3 flex items-end gap-2">
         {p.oldPrice && <span className="text-sm line-through text-muted-foreground">{p.oldPrice.toLocaleString()} lei</span>}
