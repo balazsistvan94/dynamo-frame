@@ -169,7 +169,7 @@ const HeroSlider = () => {
               </div>
               <div>
                 <div className="text-xs text-muted-foreground">Eficiență</div>
-                <div className="font-bold">>90%</div>
+                <div className="font-bold">{">"}90%</div>
               </div>
             </div>
             <div className="absolute -right-2 top-8 bg-primary text-primary-foreground rounded-2xl shadow-elev px-4 py-3 animate-float" style={{ animationDelay: "0.5s" }}>
