@@ -1,16 +1,41 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import TopBar from "@/components/site/TopBar";
+import Header from "@/components/site/Header";
+import HeroSlider from "@/components/site/HeroSlider";
+import TrustBar from "@/components/site/TrustBar";
+import CategoryCards from "@/components/site/CategoryCards";
+import OffersCarousel from "@/components/site/OffersCarousel";
+import StatsSection from "@/components/site/StatsSection";
+import SolarCalculator from "@/components/site/SolarCalculator";
+import ProductTabs from "@/components/site/ProductTabs";
+import FeaturedBanner from "@/components/site/FeaturedBanner";
+import Testimonials from "@/components/site/Testimonials";
+import BrandsMarquee from "@/components/site/BrandsMarquee";
+import Newsletter from "@/components/site/Newsletter";
+import Footer from "@/components/site/Footer";
+import LiveSalesToast from "@/components/site/LiveSalesToast";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background flex flex-col">
+      <TopBar />
+      <Header />
+      <main className="flex-1">
+        <HeroSlider />
+        <TrustBar />
+        <CategoryCards />
+        <OffersCarousel />
+        <StatsSection />
+        <SolarCalculator />
+        <ProductTabs />
+        <FeaturedBanner />
+        <Testimonials />
+        <BrandsMarquee />
+        <Newsletter />
+      </main>
+      <Footer />
+      <LiveSalesToast />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
