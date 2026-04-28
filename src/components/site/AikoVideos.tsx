@@ -46,7 +46,7 @@ const AikoVideos = () => {
             </div>
 
             <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-[3rem] font-extrabold leading-[1.02] tracking-tight text-balance">
-              AIKO, prezentat clar în 3 materiale video.
+              Descoperă brandul AIKO în 3 videoclipuri.
             </h2>
 
             <p className="mt-4 max-w-lg text-base leading-relaxed text-primary-foreground/72 md:text-lg">
