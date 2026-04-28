@@ -75,30 +75,28 @@ const AikoVideos = () => {
               <article
                 key={v.id}
                 onClick={() => setActive(v.id)}
-                className={`group relative cursor-pointer rounded-3xl overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-sm
-                  transition-all duration-500 hover:border-primary/40 hover:-translate-y-2 hover:shadow-[0_30px_80px_-20px_hsl(var(--primary)/0.4)]
-                  ${isFeatured ? "md:-translate-y-4 md:scale-[1.02]" : ""}`}
+                className={`group relative cursor-pointer rounded-2xl overflow-hidden border border-[#0b111d]/10 bg-white shadow-sm
+                  transition-all duration-500 hover:border-primary/40 hover:-translate-y-1.5 hover:shadow-[0_25px_60px_-20px_hsl(var(--primary)/0.45)]
+                  ${isFeatured ? "md:-translate-y-3" : ""}`}
               >
                 {/* Poster */}
-                <div className="relative aspect-[4/5] md:aspect-[3/4] overflow-hidden">
+                <div className="relative aspect-video overflow-hidden">
                   <img
                     src={v.poster}
                     alt={v.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-t ${v.gradient}`}
-                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b111d]/80 via-[#0b111d]/20 to-transparent" />
 
-                  {/* Top row: badge + duration */}
-                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                    <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/10">
+                  {/* Top row */}
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/95 backdrop-blur">
                       <Icon className="w-3.5 h-3.5 text-primary" />
-                      <span className="text-[10px] font-bold tracking-widest uppercase">
+                      <span className="text-[10px] font-bold tracking-widest uppercase text-[#0b111d]">
                         AIKO
                       </span>
                     </div>
-                    <span className="px-2.5 py-1 rounded-md bg-black/60 backdrop-blur text-xs font-mono">
+                    <span className="px-2 py-0.5 rounded-md bg-black/60 backdrop-blur text-[11px] font-mono text-white">
                       {v.duration}
                     </span>
                   </div>
@@ -107,32 +105,27 @@ const AikoVideos = () => {
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="relative">
                       <span className="absolute inset-0 rounded-full bg-primary/40 blur-xl group-hover:bg-primary/60 transition" />
-                      <div className="relative w-20 h-20 rounded-full bg-primary text-[#0b111d] flex items-center justify-center shadow-2xl transition-transform duration-500 group-hover:scale-110">
-                        <Play className="w-8 h-8 ml-1 fill-current" />
+                      <div className="relative w-16 h-16 rounded-full bg-primary text-[#0b111d] flex items-center justify-center shadow-xl transition-transform duration-500 group-hover:scale-110">
+                        <Play className="w-7 h-7 ml-0.5 fill-current" />
                       </div>
-                      <span className="absolute inset-0 rounded-full border-2 border-primary/50 animate-ping" />
-                    </div>
-                  </div>
-
-                  {/* Bottom text */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-primary/90 mb-2">
-                      {v.subtitle}
-                    </p>
-                    <h3 className="font-display text-xl lg:text-2xl font-bold leading-tight">
-                      {v.title}
-                    </h3>
-                    <div className="mt-4 h-px bg-gradient-to-r from-primary/60 via-white/20 to-transparent" />
-                    <div className="mt-3 flex items-center gap-2 text-sm text-white/80 group-hover:text-primary transition">
-                      <span>Urmărește video</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
                 </div>
+
+                {/* Card body */}
+                <div className="p-5">
+                  <p className="text-[11px] font-semibold uppercase tracking-widest text-primary mb-1.5">
+                    {v.subtitle}
+                  </p>
+                  <h3 className="font-display text-lg font-bold leading-snug text-[#0b111d]">
+                    {v.title}
+                  </h3>
+                  <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-[#0b111d] group-hover:text-primary transition">
+                    <Play className="w-3.5 h-3.5 fill-current" />
+                    <span>Urmărește video</span>
+                  </div>
+                </div>
               </article>
-            );
-          })}
-        </div>
 
         {/* Mobile CTA */}
         <div className="mt-10 flex justify-center md:hidden">
