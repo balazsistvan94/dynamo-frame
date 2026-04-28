@@ -126,44 +126,33 @@ const AikoVideos = () => {
                   </div>
                 </div>
               </article>
-
-        {/* Mobile CTA */}
-        <div className="mt-10 flex justify-center md:hidden">
-          <Link to="/categorie/aiko">
-            <Button
-              size="lg"
-              className="bg-primary text-[#0b111d] hover:bg-primary/90 font-bold h-12 px-6 rounded-full"
-            >
-              Vezi produsele AIKO
-              <ArrowRight />
-            </Button>
-          </Link>
+            );
+          })}
         </div>
 
-        {/* Bottom CTA bar */}
-        <div className="mt-14 relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent p-6 md:p-8">
-          <div className="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-primary/20 blur-3xl" />
+        {/* Bottom CTA bar — clear and prominent */}
+        <div className="mt-12 relative overflow-hidden rounded-2xl bg-[#0b111d] p-6 md:p-8">
+          <div className="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-primary/30 blur-3xl" />
           <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-primary/20 border border-primary/30 flex items-center justify-center shrink-0">
-                <Award className="w-7 h-7 text-primary" />
+              <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center shrink-0">
+                <Award className="w-6 h-6 text-[#0b111d]" />
               </div>
               <div>
                 <p className="text-xs font-bold tracking-widest uppercase text-primary mb-1">
-                  Ofertă specială AIKO
+                  Gata să alegi AIKO?
                 </p>
-                <h4 className="font-display text-xl md:text-2xl font-bold">
-                  Configurează acum sistemul tău cu panouri AIKO
+                <h4 className="font-display text-lg md:text-xl font-bold text-white">
+                  Vezi toate panourile AIKO disponibile în stoc
                 </h4>
               </div>
             </div>
-            <Link to="/categorie/aiko">
+            <Link to="/categorie/aiko" className="w-full md:w-auto">
               <Button
                 size="lg"
-                variant="outline"
-                className="border-primary/40 text-primary hover:bg-primary hover:text-[#0b111d] font-bold rounded-full h-12 px-6 bg-transparent"
+                className="w-full md:w-auto bg-primary text-[#0b111d] hover:bg-primary/90 font-bold h-12 px-7 rounded-lg shadow-lg"
               >
-                Explorează AIKO
+                Vezi produsele AIKO
                 <ArrowRight />
               </Button>
             </Link>
