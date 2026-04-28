@@ -94,24 +94,10 @@ const AikoVideos = () => {
               <div className="relative mt-4 aspect-[16/10] overflow-hidden rounded-xl border border-primary-foreground/10 bg-gradient-to-br from-primary-foreground/10 via-primary-foreground/[0.03] to-transparent">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--primary-foreground)/0.06)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--primary-foreground)/0.06)_1px,transparent_1px)] bg-[size:22px_22px] opacity-60" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
-                <div className="absolute left-4 top-4 flex items-center gap-2 rounded-full border border-primary-foreground/12 bg-primary/60 px-3 py-2 backdrop-blur-sm">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent text-accent-foreground">
-                    <Play className="h-4 w-4 fill-current" />
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <span className="flex h-14 w-14 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-lg transition-transform group-hover:scale-110">
+                    <Play className="h-5 w-5 fill-current" />
                   </span>
-                  <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-primary-foreground/52">
-                      Video mockup
-                    </p>
-                    <p className="text-sm font-medium text-primary-foreground">AIKO Brand</p>
-                  </div>
-                </div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-accent">
-                    {v.eyebrow}
-                  </p>
-                  <p className="mt-1 text-lg font-semibold leading-tight text-primary-foreground">
-                    {v.accent}
-                  </p>
                 </div>
               </div>
 
