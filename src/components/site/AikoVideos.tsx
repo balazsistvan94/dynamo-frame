@@ -55,7 +55,7 @@ const AikoVideos = () => {
           </div>
 
           <div className="lg:justify-self-end lg:w-full lg:max-w-md">
-            <div className="border border-primary-foreground/10 bg-primary-foreground/5 p-5 backdrop-blur-sm md:p-6">
+            <div className="rounded-2xl border border-primary-foreground/10 bg-primary-foreground/5 p-5 backdrop-blur-sm md:p-6">
               <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-primary-foreground/52">
                 Colecția AIKO
               </p>
@@ -65,7 +65,7 @@ const AikoVideos = () => {
               <Button
                 asChild
                 size="lg"
-                className="mt-5 h-12 w-full rounded-none bg-accent px-6 text-sm font-extrabold uppercase tracking-[0.14em] text-accent-foreground hover:bg-accent/90"
+                className="mt-5 h-12 w-full bg-accent px-6 text-sm font-extrabold uppercase tracking-[0.14em] text-accent-foreground hover:bg-accent/90"
               >
                 <Link to="/categorie/aiko">
                   Vezi panourile AIKO
@@ -80,7 +80,7 @@ const AikoVideos = () => {
           {videos.map((v, i) => (
             <article
               key={v.id}
-              className="group border border-primary-foreground/10 bg-primary-foreground/[0.03] p-4 transition-transform duration-300 hover:-translate-y-1 hover:bg-primary-foreground/[0.05] md:p-5"
+              className="group rounded-2xl border border-primary-foreground/10 bg-primary-foreground/[0.03] p-4 transition-transform duration-300 hover:-translate-y-1 hover:bg-primary-foreground/[0.05] md:p-5"
             >
               <div className="flex items-center justify-between gap-4 border-b border-primary-foreground/10 pb-3">
                 <span className="font-display text-sm font-bold tracking-[0.18em] text-primary-foreground/42">
@@ -91,10 +91,10 @@ const AikoVideos = () => {
                 </span>
               </div>
 
-              <div className="relative mt-4 aspect-[16/10] overflow-hidden border border-primary-foreground/10 bg-gradient-to-br from-primary-foreground/10 via-primary-foreground/[0.03] to-transparent">
+              <div className="relative mt-4 aspect-[16/10] overflow-hidden rounded-xl border border-primary-foreground/10 bg-gradient-to-br from-primary-foreground/10 via-primary-foreground/[0.03] to-transparent">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--primary-foreground)/0.06)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--primary-foreground)/0.06)_1px,transparent_1px)] bg-[size:22px_22px] opacity-60" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
-                <div className="absolute left-4 top-4 flex items-center gap-2 border border-primary-foreground/12 bg-primary/60 px-3 py-2 backdrop-blur-sm">
+                <div className="absolute left-4 top-4 flex items-center gap-2 rounded-full border border-primary-foreground/12 bg-primary/60 px-3 py-2 backdrop-blur-sm">
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent text-accent-foreground">
                     <Play className="h-4 w-4 fill-current" />
                   </span>
