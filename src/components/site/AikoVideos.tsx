@@ -40,52 +40,30 @@ const AikoVideos = () => {
   const [active, setActive] = useState<number | null>(null);
 
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden bg-[#0b111d] text-white">
-      {/* decorative background */}
+    <section className="relative py-16 md:py-20 overflow-hidden bg-white text-[#0b111d]">
+      {/* subtle decorative background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px]" />
-        <div className="absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full bg-emerald-500/10 blur-[120px]" />
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
+        <div className="absolute -top-32 -left-32 w-[400px] h-[400px] rounded-full bg-primary/10 blur-[100px]" />
+        <div className="absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full bg-emerald-500/5 blur-[100px]" />
       </div>
 
       <div className="container-x relative z-10">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/15 border border-primary/30 mb-5">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-xs font-bold tracking-widest uppercase text-primary">
-                Brand Premium · AIKO
-              </span>
-            </div>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight">
-              Descoperă Universul{" "}
-              <span className="bg-gradient-to-r from-primary to-amber-300 bg-clip-text text-transparent">
-                AIKO Solar
-              </span>
-            </h2>
-            <p className="mt-5 text-white/70 text-lg max-w-xl">
-              Tehnologie japoneză, eficiență record și 30 ani de garanție.
-              Vezi de ce mii de clienți aleg AIKO pentru instalațiile lor.
-            </p>
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-4">
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            <span className="text-xs font-bold tracking-widest uppercase text-primary">
+              Brand Premium · AIKO
+            </span>
           </div>
-
-          <Link to="/categorie/aiko" className="hidden md:inline-flex">
-            <Button
-              size="lg"
-              className="group bg-primary text-[#0b111d] hover:bg-primary/90 font-bold h-12 px-6 rounded-full shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.6)]"
-            >
-              Vezi produsele AIKO
-              <ArrowRight className="ml-1 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </Link>
+          <h2 className="font-display text-3xl md:text-4xl font-extrabold leading-tight tracking-tight">
+            Descoperă tehnologia{" "}
+            <span className="text-primary">AIKO Solar</span>
+          </h2>
+          <p className="mt-3 text-[#5f5f5f] text-base md:text-lg">
+            Tehnologie japoneză, eficiență record și până la 30 ani garanție.
+            Vezi de ce mii de clienți aleg AIKO.
+          </p>
         </div>
 
         {/* Videos grid */}
