@@ -1,38 +1,31 @@
 import { useState } from "react";
-import { Play, ArrowRight, Award, Zap, ShieldCheck } from "lucide-react";
+import { Play, ArrowUpRight, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 
 const videos = [
   {
     id: 1,
-    title: "Tehnologia ABC – Performanță Garantată",
-    subtitle: "Descoperă inovația AIKO",
-    duration: "2:14",
-    icon: Award,
-    gradient: "from-[#ffb600]/30 via-[#0b111d]/60 to-[#0b111d]",
+    eyebrow: "Episodul 01",
+    title: "Tehnologia ABC",
+    meta: "Inovație · 2:14",
     poster:
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1400&q=80",
   },
   {
     id: 2,
-    title: "Eficiență Record – Până la 24%",
-    subtitle: "Panourile AIKO Neostar",
-    duration: "1:48",
-    icon: Zap,
-    gradient: "from-emerald-500/30 via-[#0b111d]/60 to-[#0b111d]",
+    eyebrow: "Episodul 02",
+    title: "Eficiență 24%",
+    meta: "Performanță · 1:48",
     poster:
-      "https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&w=1400&q=80",
   },
   {
     id: 3,
-    title: "30 Ani Garanție – Calitate Premium",
-    subtitle: "De ce să alegi AIKO",
-    duration: "3:02",
-    icon: ShieldCheck,
-    gradient: "from-sky-500/30 via-[#0b111d]/60 to-[#0b111d]",
+    eyebrow: "Episodul 03",
+    title: "30 Ani Garanție",
+    meta: "Calitate · 3:02",
     poster:
-      "https://images.unsplash.com/photo-1566093097221-ac2335b09e70?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1566093097221-ac2335b09e70?auto=format&fit=crop&w=1400&q=80",
   },
 ];
 
@@ -40,156 +33,150 @@ const AikoVideos = () => {
   const [active, setActive] = useState<number | null>(null);
 
   return (
-    <section className="relative py-16 md:py-20 overflow-hidden bg-white text-[#0b111d]">
-      {/* subtle decorative background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-32 -left-32 w-[400px] h-[400px] rounded-full bg-primary/10 blur-[100px]" />
-        <div className="absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full bg-emerald-500/5 blur-[100px]" />
-      </div>
-
-      <div className="container-x relative z-10">
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-4">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs font-bold tracking-widest uppercase text-primary">
-              Brand Premium · AIKO
-            </span>
+    <section className="relative py-20 md:py-28 bg-white text-[#0b111d]">
+      <div className="container-x">
+        {/* Editorial header */}
+        <div className="grid grid-cols-12 gap-8 mb-14 md:mb-20">
+          <div className="col-span-12 md:col-span-3">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="h-px w-8 bg-[#0b111d]" />
+              <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0b111d]/60">
+                AIKO Solar
+              </span>
+            </div>
+            <p className="text-[11px] tracking-[0.2em] uppercase text-[#5f5f5f]">
+              Serie video · 2026
+            </p>
           </div>
-          <h2 className="font-display text-3xl md:text-4xl font-extrabold leading-tight tracking-tight">
-            Descoperă tehnologia{" "}
-            <span className="text-primary">AIKO Solar</span>
-          </h2>
-          <p className="mt-3 text-[#5f5f5f] text-base md:text-lg">
-            Tehnologie japoneză, eficiență record și până la 30 ani garanție.
-            Vezi de ce mii de clienți aleg AIKO.
-          </p>
+
+          <div className="col-span-12 md:col-span-9 md:border-l md:border-[#0b111d]/10 md:pl-10">
+            <h2 className="font-display text-[2rem] md:text-[2.75rem] leading-[1.1] tracking-tight font-semibold max-w-3xl">
+              O privire în interiorul tehnologiei{" "}
+              <span className="italic font-normal text-[#5f5f5f]">
+                care redefinește energia solară.
+              </span>
+            </h2>
+          </div>
         </div>
 
-        {/* Videos grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
-          {videos.map((v, i) => {
-            const Icon = v.icon;
-            const isFeatured = i === 1; // middle one slightly elevated
-            return (
-              <article
-                key={v.id}
-                onClick={() => setActive(v.id)}
-                className={`group relative cursor-pointer rounded-2xl overflow-hidden border border-[#0b111d]/10 bg-white shadow-sm
-                  transition-all duration-500 hover:border-primary/40 hover:-translate-y-1.5 hover:shadow-[0_25px_60px_-20px_hsl(var(--primary)/0.45)]
-                  ${isFeatured ? "md:-translate-y-3" : ""}`}
-              >
-                {/* Poster */}
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src={v.poster}
-                    alt={v.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b111d]/80 via-[#0b111d]/20 to-transparent" />
+        {/* Videos — editorial gallery */}
+        <div className="grid grid-cols-12 gap-6 md:gap-8">
+          {videos.map((v, i) => (
+            <button
+              key={v.id}
+              onClick={() => setActive(v.id)}
+              className={`group relative text-left col-span-12 md:col-span-4 ${
+                i === 1 ? "md:mt-12" : ""
+              }`}
+            >
+              {/* Index */}
+              <div className="flex items-baseline justify-between mb-3">
+                <span className="font-display text-xs tracking-[0.25em] uppercase text-[#0b111d]/50">
+                  {String(i + 1).padStart(2, "0")} / 03
+                </span>
+                <span className="text-[10px] tracking-[0.2em] uppercase text-[#5f5f5f]">
+                  {v.meta}
+                </span>
+              </div>
 
-                  {/* Top row */}
-                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
-                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/95 backdrop-blur">
-                      <Icon className="w-3.5 h-3.5 text-primary" />
-                      <span className="text-[10px] font-bold tracking-widest uppercase text-[#0b111d]">
-                        AIKO
-                      </span>
-                    </div>
-                    <span className="px-2 py-0.5 rounded-md bg-black/60 backdrop-blur text-[11px] font-mono text-white">
-                      {v.duration}
+              {/* Poster */}
+              <div className="relative aspect-[4/5] overflow-hidden bg-[#0b111d]">
+                <img
+                  src={v.poster}
+                  alt={v.title}
+                  className="w-full h-full object-cover opacity-90 transition-all duration-[1200ms] ease-out group-hover:opacity-100 group-hover:scale-[1.04]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0b111d]/40" />
+
+                {/* Play indicator — minimal */}
+                <div className="absolute inset-0 flex items-end p-6">
+                  <div className="flex items-center gap-3 text-white">
+                    <span className="w-11 h-11 rounded-full bg-white/95 text-[#0b111d] flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                      <Play className="w-4 h-4 ml-0.5 fill-current" />
+                    </span>
+                    <span className="text-[11px] tracking-[0.2em] uppercase font-semibold">
+                      Watch
                     </span>
                   </div>
-
-                  {/* Center play button */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="relative">
-                      <span className="absolute inset-0 rounded-full bg-primary/40 blur-xl group-hover:bg-primary/60 transition" />
-                      <div className="relative w-16 h-16 rounded-full bg-primary text-[#0b111d] flex items-center justify-center shadow-xl transition-transform duration-500 group-hover:scale-110">
-                        <Play className="w-7 h-7 ml-0.5 fill-current" />
-                      </div>
-                    </div>
-                  </div>
                 </div>
 
-                {/* Card body */}
-                <div className="p-5">
-                  <p className="text-[11px] font-semibold uppercase tracking-widest text-primary mb-1.5">
-                    {v.subtitle}
-                  </p>
-                  <h3 className="font-display text-lg font-bold leading-snug text-[#0b111d]">
-                    {v.title}
-                  </h3>
-                  <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-[#0b111d] group-hover:text-primary transition">
-                    <Play className="w-3.5 h-3.5 fill-current" />
-                    <span>Urmărește video</span>
-                  </div>
+                {/* Corner mark */}
+                <div className="absolute top-4 left-4">
+                  <div className="w-6 h-6 border-l border-t border-white/70" />
                 </div>
-              </article>
-            );
-          })}
+                <div className="absolute top-4 right-4">
+                  <div className="w-6 h-6 border-r border-t border-white/70" />
+                </div>
+              </div>
+
+              {/* Caption */}
+              <div className="mt-5">
+                <p className="text-[10px] tracking-[0.25em] uppercase text-primary font-bold mb-2">
+                  {v.eyebrow}
+                </p>
+                <h3 className="font-display text-2xl md:text-[1.6rem] leading-tight font-medium tracking-tight">
+                  {v.title}
+                </h3>
+                <div className="mt-4 h-px w-10 bg-[#0b111d] transition-all duration-500 group-hover:w-24" />
+              </div>
+            </button>
+          ))}
         </div>
 
-        {/* Bottom CTA bar — clear and prominent */}
-        <div className="mt-12 relative overflow-hidden rounded-2xl bg-[#0b111d] p-6 md:p-8">
-          <div className="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-primary/30 blur-3xl" />
-          <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center shrink-0">
-                <Award className="w-6 h-6 text-[#0b111d]" />
-              </div>
-              <div>
-                <p className="text-xs font-bold tracking-widest uppercase text-primary mb-1">
-                  Gata să alegi AIKO?
-                </p>
-                <h4 className="font-display text-lg md:text-xl font-bold text-white">
-                  Vezi toate panourile AIKO disponibile în stoc
-                </h4>
-              </div>
-            </div>
-            <Link to="/categorie/aiko" className="w-full md:w-auto">
-              <Button
-                size="lg"
-                className="w-full md:w-auto bg-primary text-[#0b111d] hover:bg-primary/90 font-bold h-12 px-7 rounded-lg shadow-lg"
-              >
+        {/* CTA — editorial, unmissable */}
+        <div className="mt-20 md:mt-28 grid grid-cols-12 gap-8 items-end border-t border-[#0b111d]/10 pt-10">
+          <div className="col-span-12 md:col-span-7">
+            <p className="text-[10px] tracking-[0.25em] uppercase text-primary font-bold mb-3">
+              — Colecția AIKO
+            </p>
+            <h3 className="font-display text-3xl md:text-4xl leading-[1.1] tracking-tight font-semibold max-w-xl">
+              Vezi toate panourile AIKO disponibile în stoc.
+            </h3>
+          </div>
+
+          <div className="col-span-12 md:col-span-5 flex md:justify-end">
+            <Link
+              to="/categorie/aiko"
+              className="group inline-flex items-center gap-4 bg-[#0b111d] text-white pl-7 pr-3 py-3 rounded-full hover:bg-primary hover:text-[#0b111d] transition-colors duration-300"
+            >
+              <span className="text-sm font-bold tracking-wider uppercase">
                 Vezi produsele AIKO
-                <ArrowRight />
-              </Button>
+              </span>
+              <span className="w-11 h-11 rounded-full bg-primary text-[#0b111d] flex items-center justify-center group-hover:bg-[#0b111d] group-hover:text-primary transition-colors duration-300">
+                <ArrowUpRight className="w-5 h-5" />
+              </span>
             </Link>
           </div>
         </div>
       </div>
 
-      {/* Lightbox modal placeholder */}
+      {/* Lightbox */}
       {active && (
         <div
           onClick={() => setActive(null)}
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in"
+          className="fixed inset-0 z-50 bg-[#0b111d]/95 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in"
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-4xl aspect-video rounded-2xl overflow-hidden border border-white/10 bg-[#0b111d] flex items-center justify-center"
+            className="relative w-full max-w-5xl aspect-video bg-[#0b111d] border border-white/10 flex items-center justify-center"
           >
             <div className="text-center px-6">
-              <div className="w-20 h-20 mx-auto rounded-full bg-primary/20 flex items-center justify-center mb-4">
-                <Play className="w-10 h-10 text-primary fill-current ml-1" />
-              </div>
-              <p className="text-white/60 text-sm uppercase tracking-widest mb-2">
+              <p className="text-[10px] tracking-[0.3em] uppercase text-primary mb-4">
                 Video Mockup
               </p>
-              <h3 className="text-white font-display text-2xl font-bold">
+              <h3 className="text-white font-display text-2xl md:text-3xl font-medium tracking-tight">
                 {videos.find((x) => x.id === active)?.title}
               </h3>
-              <p className="text-white/50 mt-2 text-sm">
+              <p className="text-white/40 mt-3 text-sm">
                 Videoclipul va fi adăugat în curând.
               </p>
             </div>
             <button
               onClick={() => setActive(null)}
-              className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center"
+              className="absolute top-4 right-4 w-10 h-10 text-white/70 hover:text-white flex items-center justify-center"
               aria-label="Close"
             >
-              ✕
+              <X className="w-5 h-5" />
             </button>
           </div>
         </div>
