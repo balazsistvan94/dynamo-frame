@@ -8,6 +8,7 @@ import StatsSection from "@/components/site/StatsSection";
 import SolarCalculator from "@/components/site/SolarCalculator";
 import ProductTabs from "@/components/site/ProductTabs";
 import FeaturedBanner from "@/components/site/FeaturedBanner";
+import AikoVideos from "@/components/site/AikoVideos";
 import Testimonials from "@/components/site/Testimonials";
 import BrandsMarquee from "@/components/site/BrandsMarquee";
 import Newsletter from "@/components/site/Newsletter";
@@ -28,6 +29,7 @@ const Index = () => {
         <SolarCalculator />
         <ProductTabs />
         <FeaturedBanner />
+        <AikoVideos />
         <Testimonials />
         <BrandsMarquee />
         <Newsletter />
