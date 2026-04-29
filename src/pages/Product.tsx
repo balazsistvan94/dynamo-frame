@@ -239,18 +239,87 @@ const Product = () => {
             ))}
           </ul>
 
-          {/* Price card */}
-          <div className="mt-6 rounded-2xl border border-border bg-card p-5 shadow-card">
-            <div className="flex items-end gap-3 flex-wrap">
-              {p.oldPrice && (
-                <span className="text-base line-through text-muted-foreground">{p.oldPrice.toLocaleString("ro-RO", { minimumFractionDigits: 2 })} lei</span>
-              )}
-              <span className="text-4xl font-extrabold text-foreground">
-                {p.price.toLocaleString("ro-RO", { minimumFractionDigits: 2 })}
-                <span className="text-base font-semibold text-muted-foreground"> lei</span>
+          {/* B2B Partner pricing card */}
+          <div className="mt-6 relative overflow-hidden rounded-3xl border border-[hsl(158_55%_45%/0.25)] bg-gradient-to-br from-[hsl(158_60%_97%)] via-card to-[hsl(168_55%_96%)] p-5 shadow-card">
+            {/* Decorative glow */}
+            <div className="pointer-events-none absolute -top-16 -right-16 h-48 w-48 rounded-full bg-[hsl(158_64%_42%/0.18)] blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-20 -left-10 h-40 w-40 rounded-full bg-[hsl(168_70%_45%/0.12)] blur-3xl" />
+
+            {/* Header strip */}
+            <div className="relative flex items-center justify-between gap-3 rounded-2xl border border-[hsl(158_55%_45%/0.22)] bg-white/70 backdrop-blur px-4 py-3">
+              <div className="flex items-center gap-3">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[hsl(158_64%_42%)] text-white shadow-sm">
+                  <Award className="h-5 w-5" />
+                </span>
+                <div className="leading-tight">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-[hsl(158_64%_30%)]">Cont partener activ</div>
+                  <div className="text-sm font-bold text-foreground">Prețul tău B2B exclusiv</div>
+                </div>
+              </div>
+              <span className="inline-flex items-center rounded-full bg-[hsl(158_64%_42%)] px-2.5 py-1 text-[11px] font-extrabold text-white shadow-sm">
+                −18%
               </span>
-              <span className="text-xs text-muted-foreground">+TVA / buc</span>
             </div>
+
+            {/* B2B price row */}
+            <div className="relative mt-4 px-1">
+              <div className="flex items-end justify-between gap-4 flex-wrap">
+                <div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.16em] text-muted-foreground">Preț B2B fără TVA</div>
+                  <div className="mt-1 flex items-baseline gap-1.5">
+                    <span className="font-display text-4xl font-extrabold text-foreground tabular-nums">
+                      {p.price.toLocaleString("ro-RO", { minimumFractionDigits: 2 })}
+                    </span>
+                    <span className="text-base font-bold text-muted-foreground">Lei</span>
+                  </div>
+                </div>
+                {p.oldPrice && (
+                  <div className="text-right">
+                    <div className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Preț retail fără TVA</div>
+                    <div className="mt-1 text-base font-semibold text-muted-foreground line-through tabular-nums">
+                      {p.oldPrice.toLocaleString("ro-RO", { minimumFractionDigits: 2 })} Lei
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div className="mt-3 text-center text-[11px] font-medium text-muted-foreground">
+                + TVA 21% · {(p.price * 0.21).toLocaleString("ro-RO", { minimumFractionDigits: 2 })} Lei
+              </div>
+            </div>
+
+            {/* Total with TVA */}
+            <div className="relative mt-3 rounded-2xl bg-gradient-to-br from-[hsl(158_64%_42%)] to-[hsl(168_70%_38%)] p-4 text-white shadow-md">
+              <div className="flex items-end justify-between gap-3 flex-wrap">
+                <div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/80">Total cu TVA</div>
+                  <div className="mt-1 flex items-baseline gap-1.5">
+                    <span className="font-display text-3xl font-extrabold tabular-nums">
+                      {(p.price * 1.21).toLocaleString("ro-RO", { minimumFractionDigits: 2 })}
+                    </span>
+                    <span className="text-sm font-bold text-white/85">Lei</span>
+                  </div>
+                </div>
+                {p.oldPrice && (
+                  <div className="flex flex-col items-end gap-1.5">
+                    <span className="text-sm font-semibold text-white/60 line-through tabular-nums">
+                      {(p.oldPrice * 1.21).toLocaleString("ro-RO", { minimumFractionDigits: 2 })} Lei
+                    </span>
+                    <span className="inline-flex items-center gap-1 rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-bold text-white ring-1 ring-white/25 backdrop-blur">
+                      <Check className="h-3 w-3" /> Economisești {((p.oldPrice - p.price) * 1.21).toLocaleString("ro-RO", { minimumFractionDigits: 2 })} Lei
+                    </span>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {p.oldPrice && (
+              <div className="relative mt-3 flex items-center gap-2 rounded-xl border border-[hsl(43_100%_50%/0.35)] bg-[hsl(43_100%_50%/0.08)] px-3 py-2">
+                <Info className="h-4 w-4 text-[hsl(38_90%_40%)] shrink-0" />
+                <span className="text-xs text-foreground/80">
+                  Preț retail: <span className="line-through font-semibold">{(p.oldPrice * 1.21).toLocaleString("ro-RO", { minimumFractionDigits: 2 })} Lei cu TVA</span>
+                </span>
+              </div>
+            )}
 
             {p.oldPrice && (
               <div className="mt-1 inline-flex items-center gap-1 text-xs font-semibold text-eco">
