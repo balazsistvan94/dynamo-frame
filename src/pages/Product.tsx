@@ -321,11 +321,6 @@ const Product = () => {
               </div>
             )}
 
-            {p.oldPrice && (
-              <div className="mt-1 inline-flex items-center gap-1 text-xs font-semibold text-eco">
-                <Award className="h-3 w-3" /> Economisești {(p.oldPrice - p.price).toLocaleString("ro-RO", { minimumFractionDigits: 2 })} lei
-              </div>
-            )}
 
             <div className="mt-4 flex items-center gap-2 text-sm">
               <span className="inline-flex h-2 w-2 rounded-full bg-eco animate-pulse" />
