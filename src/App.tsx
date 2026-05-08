@@ -10,6 +10,7 @@ import Partner from "./pages/Partner.tsx";
 import Contact from "./pages/Contact.tsx";
 import Payment from "./pages/Payment.tsx";
 import Returns from "./pages/Returns.tsx";
+import About from "./pages/About.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
