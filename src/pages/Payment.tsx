@@ -128,12 +128,6 @@ const Payment = () => {
                       />
                     </ul>
 
-                    <div className="mt-8 flex flex-wrap gap-3">
-                      <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
-                        <CreditCard className="h-4 w-4" /> Plătește cu cardul
-                      </Button>
-                      <Button size="lg" variant="outline">Vezi termenii EuPlătesc</Button>
-                    </div>
                   </div>
                 </div>
               </div>
