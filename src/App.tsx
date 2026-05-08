@@ -8,6 +8,7 @@ import Category from "./pages/Category.tsx";
 import Product from "./pages/Product.tsx";
 import Partner from "./pages/Partner.tsx";
 import Contact from "./pages/Contact.tsx";
+import Payment from "./pages/Payment.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/produs/:id" element={<Product />} />
           <Route path="/devino-partener" element={<Partner />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/metode-de-plata" element={<Payment />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
