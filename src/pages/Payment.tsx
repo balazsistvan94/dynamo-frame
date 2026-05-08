@@ -21,19 +21,19 @@ const Payment = () => {
       <Header />
       <main className="flex-1">
         {/* Hero */}
-        <section className="relative overflow-hidden border-b border-border">
+        <section className="relative overflow-hidden bg-gradient-navy text-primary-foreground">
           <div className="absolute inset-0 bg-sun-glow opacity-60" />
           <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-accent/20 blur-3xl animate-sun-pulse" />
           <div className="absolute -bottom-40 -right-20 h-96 w-96 rounded-full bg-eco/20 blur-3xl" />
           <div className="container-x relative py-20 md:py-28">
             <div className="max-w-3xl">
-              <span className="inline-flex items-center gap-2 rounded-full bg-accent/15 text-accent-foreground px-4 py-1.5 text-xs font-bold uppercase tracking-wider border border-accent/30">
+              <span className="inline-flex items-center gap-2 rounded-full bg-accent/15 text-accent px-4 py-1.5 text-xs font-bold uppercase tracking-wider border border-accent/30">
                 <ShieldCheck className="h-3.5 w-3.5" /> Tranzacții 100% securizate
               </span>
               <h1 className="mt-5 text-4xl md:text-6xl font-extrabold tracking-tight text-balance">
                 Metode de <span className="text-accent">plată</span>
               </h1>
-              <p className="mt-5 text-lg text-muted-foreground max-w-2xl leading-relaxed">
+              <p className="mt-5 text-lg text-primary-foreground/75 max-w-2xl leading-relaxed">
                 Oferim multiple modalități de plată pentru a face achiziția produselor noastre cât mai convenabilă pentru dumneavoastră.
               </p>
 
@@ -245,7 +245,7 @@ const Payment = () => {
 };
 
 const Badge = ({ icon: Icon, text }: { icon: any; text: string }) => (
-  <span className="inline-flex items-center gap-2 rounded-full bg-card border border-border px-3 py-1.5 text-xs font-semibold shadow-sm">
+  <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-3 py-1.5 text-xs font-semibold backdrop-blur">
     <Icon className="h-3.5 w-3.5 text-accent" /> {text}
   </span>
 );
